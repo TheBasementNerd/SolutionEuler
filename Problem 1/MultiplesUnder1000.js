@@ -2,12 +2,11 @@
 
 function Multiple(inp, bel) {
 	let oup = 0;
-	for (let i=0; i<=bel; i += inp) {
-		oup += i;
-		console.log(i);
+	for (let i=0; i<bel; i++) {
+		oup += (i%inp[0] == 0 || i%inp[1] == 0) ? i : 0;
 	}
 
 	return oup;
 }
 
-console.log(Multiple(3, 1000) + Multiple(5, 1000));
+console.log(Multiple([3, 5], 1000));
